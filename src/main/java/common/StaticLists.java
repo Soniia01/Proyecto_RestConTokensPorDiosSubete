@@ -64,6 +64,6 @@ public class StaticLists {
             new Libro("Tinísima", List.of("Ensayo"), "Elena Poniatowska")));
     //Credenciales
     public static List<Credenciales> credenciales = new ArrayList<>(List.of(
-            new Credenciales("9722af24-8579-4c0c-abdd-6ce43dc8e293","sonia","PBKDF2WithHmacSHA256:2048:HrkEvNhEC3sAsYNCixYdokP+t8NtWkelUs1kP5Hrti4=:NTjqMzugEG+OI13ZEZJUl1xlVmIlGcgQTgyp12/7m2I=","soniasf00@gmail.com",false,"Vyp82283PfaMvzEp99TJxhEeBjGGtxQkheBUoez4TMo=")
+            new Credenciales("9722af24-8579-4c0c-abdd-6ce43dc8e293","sonia","PBKDF2WithHmacSHA256:2048:HrkEvNhEC3sAsYNCixYdokP+t8NtWkelUs1kP5Hrti4=:NTjqMzugEG+OI13ZEZJUl1xlVmIlGcgQTgyp12/7m2I=","soniasf00@gmail.com",true,"zd-C0FzmPd5-w7rqzsdAVNrDkkBrk-Pm5UXpyYee6NY=")
     ));
 }

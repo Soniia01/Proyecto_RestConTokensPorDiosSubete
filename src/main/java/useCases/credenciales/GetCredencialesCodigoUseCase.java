@@ -16,6 +16,6 @@ public class GetCredencialesCodigoUseCase {
     }
 
     public Either<ApiError, Credenciales> getCredencialesCodigo(String codigAuth) {
-        return credentialDao.getCredenciales(codigAuth);
+        return credentialDao.getCredencialesCodigo(codigAuth);
     }
 }
