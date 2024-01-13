@@ -1,6 +1,6 @@
 package rest.errores;
 
-import domain.GeneralErrorException;
+import domain.error.GeneralErrorException;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.ext.ExceptionMapper;

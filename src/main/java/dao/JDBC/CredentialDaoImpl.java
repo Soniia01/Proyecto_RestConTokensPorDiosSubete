@@ -3,7 +3,7 @@ package dao.JDBC;
 import common.ConstantesErrores;
 import common.StaticLists;
 import dao.CredentialDao;
-import domain.GeneralErrorException;
+import domain.error.GeneralErrorException;
 import domain.model.Credenciales;
 import io.vavr.control.Either;
 import lombok.extern.log4j.Log4j2;
@@ -61,6 +61,18 @@ public class CredentialDaoImpl implements CredentialDao {
         return either;
     }
 
+    @Override
+    public Either<ApiError, Credenciales> getCredencialesUsername(String username) {
+        Either<ApiError, Credenciales> either;
+        try {
+            Credenciales cred = StaticLists.credenciales.stream().filter(credencial1 -> credencial1.getUsername().equals(username)).findFirst().orElse(null);
+            either = Either.right(cred);
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+            throw new GeneralErrorException(ConstantesErrores.THERE_WAS_AN_ERROR_FETCHING_USER);
+        }
+        return either;
+    }
     @Override
     public Either<ApiError, Credenciales> getCredenciales(String email) {
         Either<ApiError, Credenciales> either;

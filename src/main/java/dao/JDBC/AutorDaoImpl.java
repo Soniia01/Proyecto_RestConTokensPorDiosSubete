@@ -3,7 +3,7 @@ package dao.JDBC;
 import common.ConstantesErrores;
 import common.StaticLists;
 import dao.AutorDao;
-import domain.GeneralErrorException;
+import domain.error.GeneralErrorException;
 import domain.model.Autor;
 import io.vavr.control.Either;
 import lombok.Data;

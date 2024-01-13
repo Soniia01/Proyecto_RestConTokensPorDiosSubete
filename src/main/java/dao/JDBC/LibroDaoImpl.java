@@ -4,7 +4,7 @@ package dao.JDBC;
 import common.ConstantesErrores;
 import common.StaticLists;
 import dao.LibroDao;
-import domain.GeneralErrorException;
+import domain.error.GeneralErrorException;
 import domain.model.Autor;
 import domain.model.Libro;
 import io.vavr.control.Either;

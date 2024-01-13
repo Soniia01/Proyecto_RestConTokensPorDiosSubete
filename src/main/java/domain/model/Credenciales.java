@@ -12,6 +12,7 @@ public class Credenciales {
     private String email;
     private boolean autentificado;
     private String codigoAuth;
+    private String rol;
 
     public Credenciales(String username, String password, String email) {
         uuid = java.util.UUID.randomUUID().toString();

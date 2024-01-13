@@ -1,6 +1,7 @@
 package useCases.credenciales;
 
 import dao.CredentialDao;
+import domain.error.GeneralErrorException;
 import domain.model.Credenciales;
 import jakarta.inject.Inject;
 import jakarta.security.enterprise.identitystore.Pbkdf2PasswordHash;
@@ -13,14 +14,13 @@ public class LoginUseCase {
         this.credentialDao = credentialDao;
         this.passwordHash = passwordHash;
     }
-    public boolean userLogged(Credenciales credenciales){
-        Credenciales cred = credentialDao.userLogged(credenciales).get();
-        boolean logged = false;
-        if (cred != null) {
-            passwordHash.verify(credenciales.getPassword().toCharArray(), cred.getPassword());
-            logged=true;
+    public Credenciales userLogged(String username, String password){
+        Credenciales cred = credentialDao.getCredencialesUsername(username).getOrNull();
+        if (cred != null && passwordHash.verify(password.toCharArray(), cred.getPassword())) {
+                return cred;
+        }else {
+            throw new GeneralErrorException("No se ha podido loggear");
         }
-        return logged;
     }
 
 }
